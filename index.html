@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cek mood wina alfianaa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Kanvas Partikel Love (Muncul aktif di ending, samar di background awal) -->
+  <canvas id="loveCanvas"></canvas>
+
+  <!-- Kontainer Utama Pertanyaan -->
+  <main class="container" id="cardContainer">
+    <!-- Indikator Progres -->
+    <div class="progress-dots" id="progressDots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <!-- Step 1: Tanya Mood -->
+    <section class="step active" id="step-1">
+      <div class="badge">ayok cek mood kamu sekarang</div>
+      <h1>Hai cantik, gimana mood kamu hari ini?</h1>
+      <p class="subtitle">Pilih yang paling menggambarkan perasaanmu sekarang yaah</p>
+      
+      <div class="options-grid">
+        <button class="option-btn" data-step="1" data-value="Seneng banget! 🥰">
+          <span class="emoji">🥰</span>
+          <span>Seneng banget!</span>
+        </button>
+        <button class="option-btn" data-step="1" data-value="Lumayan oke 😊">
+          <span class="emoji">😊</span>
+          <span>Lumayan oke</span>
+        </button>
+        <button class="option-btn" data-step="1" data-value="Agak capek 😮‍💨">
+          <span class="emoji">😮‍💨</span>
+          <span>Agak capek</span>
+        </button>
+        <button class="option-btn" data-step="1" data-value="Lagi badmood 🥺">
+          <span class="emoji">🥺</span>
+          <span>Lagi badmood</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Step 2: Tanya Matcha -->
+    <section class="step" id="step-2">
+      <div class="badge">🍵 Matcha Time</div>
+      <p class="reply-bubble" id="reply-1"></p>
+      <h1>Hari ini udah minum matcha belum?</h1>
+      <p class="subtitle">Biar hari-harimu makin manis dan tenang~</p>
+
+      <div class="options-grid">
+        <button class="option-btn" data-step="2" data-value="Udah dong, enak banget! 🍵">
+          <span class="emoji">🍵</span>
+          <span>Udah dong!</span>
+        </button>
+        <button class="option-btn" data-step="2" data-value="Belum, lagi pengen nih 🤤">
+          <span class="emoji">🤤</span>
+          <span>Belum, tapi pengen</span>
+        </button>
+        <button class="option-btn" data-step="2" data-value="Ganti minuman lain dulu 🧋">
+          <span class="emoji">🧋</span>
+          <span>Minum yang lain</span>
+        </button>
+        <button class="option-btn" data-step="2" data-value="Traktir matcha dong! 🤭">
+          <span class="emoji">🤭</span>
+          <span>Kode minta ditraktir</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Step 3: Tanya Makan -->
+    <section class="step" id="step-3">
+      <div class="badge">🍱 Meal Check</div>
+      <p class="reply-bubble" id="reply-2"></p>
+      <h1>Terus, kamu udah makan belum?</h1>
+      <p class="subtitle">Jangan sampai telat makan ya, nanti sakit loh.</p>
+
+      <div class="options-grid">
+        <button class="option-btn" data-step="3" data-value="Udah kenyang! 🍽️">
+          <span class="emoji">🍽️</span>
+          <span>Udah kenyang!</span>
+        </button>
+        <button class="option-btn" data-step="3" data-value="Baru ngemil dikit 🍪">
+          <span class="emoji">🍪</span>
+          <span>Baru ngemil dikit</span>
+        </button>
+        <button class="option-btn" data-step="3" data-value="Belum makan nih 🥺">
+          <span class="emoji">🥺</span>
+          <span>Belum makan nih</span>
+        </button>
+        <button class="option-btn" data-step="3" data-value="Lagi mager nyari makan 🛌">
+          <span class="emoji">🛌</span>
+          <span>Lagi mager makan</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Ending Overlay: Partikel Love Interaktif -->
+  <div class="ending-ui hidden" id="endingUI">
+    <div class="ending-card">
+      <h2>Untuk Kamu 💗</h2>
+      <p id="finalSummary"></p>
+      <p class="hint">✨ Sentuh, geser, atau klik partikel love di layar untuk memainkannya!</p>
+      
+      <div class="controls">
+        <button class="ctrl-btn active" id="modeRepel">💨 Dorong Love</button>
+        <button class="ctrl-btn" id="modeAttract">🧲 Magnet Jari</button>
+        <button class="ctrl-btn" id="btnBurst">💥 Ledakkan</button>
+        <button class="ctrl-btn secondary" id="btnRestart">↺ Ulangi</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
